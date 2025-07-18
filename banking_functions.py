@@ -79,7 +79,7 @@ def depositar( clientes ):
     if not conta:
         return
     while True:
-        entrada = input("Valor a ser sacado (ou 'c' para cancelar): R$").strip()
+        entrada = input("Valor a ser depositado (ou 'c' para cancelar): R$").strip()
         if entrada.lower() == 'c':
             valor = None
             break
@@ -101,7 +101,7 @@ def sacar(clientes):
     if not conta:
         return
     while True:
-        entrada = input("Valor a ser depositado (ou 'c' para cancelar): R$").strip()
+        entrada = input("Valor a ser sacado (ou 'c' para cancelar): R$").strip()
         if entrada.lower() == 'c':
             valor = None
             break
@@ -142,6 +142,7 @@ def criar_conta(nova_conta, clientes, contas):
         return
     cliente.adicionar_conta(Conta(nova_conta, cliente))
     contas.append(nova_conta)
+    input(f'*** Conta {nova_conta} criada com sucesso ***')
  
 
 def listar_contas(clientes, cliente_selecionado=False):
